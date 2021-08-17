@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20.0)
+cmake_minimum_required(VERSION 3.16.3)
 set(PROJECT_NAME cmake-experiment)
 project(${PROJECT_NAME} VERSION 0.0.0)
 
@@ -29,7 +29,14 @@ else()
 endif()
 
 # Add libraries here.
+if(MSVC)
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    jsoncpp_lib
-    jsoncpp_object
+  jsoncpp_lib
+  jsoncpp_object
 )
+else()
+target_link_libraries(${PROJECT_NAME} PRIVATE
+  jsoncpp_static
+  jsoncpp_object
+)
+endif()
