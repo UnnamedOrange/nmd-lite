@@ -1,6 +1,6 @@
 # cmake-experiment
 
-Other config you need to append.
+Other config you need to append (They should be global).
 
 ```json
     "cmake.configureEnvironment": 
@@ -13,3 +13,10 @@ Other config you need to append.
     },
 ```
 
+## Dependencies
+
+CMake will run the command for you. You just need to install vcpkg and add the config above.
+
+```powershell
+vcpkg --feature-flags="versions" install
+```

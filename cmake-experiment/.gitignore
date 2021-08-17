@@ -13,5 +13,6 @@ _deps
 
 # Custom
 .vscode/
+vcpkg_installed/
 build/
 bin/

@@ -1,0 +1,11 @@
+{
+    "name": "cmake-experiment",
+    "version": "0.0.0",
+    "builtin-baseline": "d679a1e0befa9c9e36fcda169c94f6daba2224b7",
+    "dependencies": [
+        "jsoncpp"
+    ],
+    "overrides": [
+        { "name": "jsoncpp", "version": "1.9.4" }
+    ]
+}
