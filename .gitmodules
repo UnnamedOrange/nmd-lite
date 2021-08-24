@@ -1,0 +1,3 @@
+[submodule "nmd-lex/third-party/utils"]
+	path = nmd-lex/third-party/utils
+	url = https://github.com/UnnamedOrange/utils
