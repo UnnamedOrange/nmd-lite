@@ -16,7 +16,7 @@ class source_interface
 protected:
 	[[nodiscard]] virtual char32_t forward() = 0;
 	virtual void backward() = 0;
-	virtual bool eof() const = 0;
+	virtual bool eof_source() const = 0;
 	virtual void reset_source() = 0;
 };
 
@@ -24,6 +24,7 @@ class lex_interface
 {
 public:
 	[[nodiscard]] virtual std::u32string next() = 0;
+	virtual bool eof() const = 0;
 	virtual void reset() = 0;
 };
 

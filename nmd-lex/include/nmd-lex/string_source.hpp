@@ -22,9 +22,18 @@ public:
 	string_source() noexcept = default;
 	string_source(std::u32string_view content) : _content(content) {}
 	string_source(const string_source &) = delete;
-	string_source(string_source &&) noexcept = delete;
-	string_source &operator=(const string_source &) = delete;
-	string_source &operator=(string_source &&) noexcept = delete;
+	string_source& operator=(const string_source &) = delete;
+	string_source(string_source &&another) noexcept
+	{
+		*this = std::move(another);
+	}
+	string_source& operator=(string_source &&another) noexcept
+	{
+		_content = std::move(another._content);
+		_it = std::move(another._it);
+		// another._it = another._content.cbegin();
+		return *this;
+	}
 
 protected:
 	[[nodiscard]] char32_t forward() override
@@ -35,7 +44,7 @@ protected:
 	{
 		--_it;
 	}
-	virtual bool eof() const override
+	virtual bool eof_source() const override
 	{
 		return _it == _content.cend();
 	}
