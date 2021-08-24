@@ -14,6 +14,8 @@ file(GLOB_RECURSE SRC_FILES "src/*.cpp" "src/*.cxx" "src/*.cc")
 file(GLOB_RECURSE HEADER_FILES "include/*.h" "include/*.hpp")
 add_executable(main "${SRC_FILES}" "${HEADER_FILES}")
 
+target_include_directories(main PUBLIC "include")
+
 target_compile_features(main PUBLIC cxx_std_20)
 if(MSVC)
   target_compile_options(main PRIVATE /W4)
