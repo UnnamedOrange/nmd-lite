@@ -3,5 +3,4 @@
 
 #pragma once
 
-#include <nmd-lex/lex_interface.hpp>
-#include <nmd-lex/string_source.hpp>
+#include <nmd-lex/lex_core.hpp>

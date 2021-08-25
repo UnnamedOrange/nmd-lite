@@ -21,11 +21,7 @@ protected:
 	virtual void reset_source() = 0;
 };
 
-enum class token_t
-{
-	_reserved,
-	any,
-};
+enum class token_t : size_t;
 
 class lex_interface
 {
