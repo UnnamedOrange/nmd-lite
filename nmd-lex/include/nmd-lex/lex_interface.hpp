@@ -5,6 +5,7 @@
 
 #include <string>
 #include <string_view>
+#include <utility>
 
 #include <nmd-lex/lex_aux.hpp>
 
@@ -20,10 +21,16 @@ protected:
 	virtual void reset_source() = 0;
 };
 
+enum class token_t
+{
+	_reserved,
+	any,
+};
+
 class lex_interface
 {
 public:
-	[[nodiscard]] virtual std::u32string next() = 0;
+	[[nodiscard]] virtual std::pair<token_t, std::u32string> next() = 0;
 	virtual bool eof() const = 0;
 	virtual void reset() = 0;
 };
